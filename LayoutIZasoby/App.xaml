@@ -1,0 +1,46 @@
+﻿<Application x:Class="LayoutIZasoby.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:LayoutIZasoby"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <Style x:Key="Style1">
+            <Setter Property="Control.Background" Value="Yellow"/>
+        </Style>
+
+        <Style x:Key="Style2" BasedOn="{StaticResource Style1}">
+            <Setter Property="Control.Foreground" Value="Blue"/>
+        </Style>
+
+        <Color x:Key="KolorNowyButton">#EEE</Color>
+        <SolidColorBrush x:Key="KolorButton" Color="{DynamicResource KolorNowyButton}"/>
+
+        <Style
+            TargetType="Label"
+            >
+            <Setter Property="Background" Value="{DynamicResource KolorButton}"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="20"/>
+        </Style>
+
+        <Color x:Key="DrugiStylDlaPrzycisku">#DDF</Color>
+        <SolidColorBrush x:Key="DrugiStylPrzycisk" Color="{DynamicResource DrugiStylDlaPrzycisku}"/>
+        <Style
+            TargetType="Button"
+            >
+            <Setter Property="FontSize" Value="20"/>
+            
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="DarkGoldenrod"/>
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter Property="Background" Value="SlateGray" />
+                    <Setter Property="Foreground" Value="White"></Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+    </Application.Resources>
+</Application>
